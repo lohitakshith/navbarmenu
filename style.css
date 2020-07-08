@@ -1,0 +1,64 @@
+.navbar-toggler{
+    width: 60px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    
+}
+.line {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+}
+.line::before, .line::after{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+}
+.line::after{
+    /* background-color: red; */
+    transform: translateY(10px);
+}
+.line::before{
+    transform: translateY(-10px);
+    /* background-color: yellow; */
+}
+/* CROSS ANIMATION */
+.navbar-toggler.open .line{
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+.navbar-toggler.open .line::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.navbar-toggler.open .line::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* MINUS ANIMATION */
+/* .navbar-toggler.open .line::before{
+    transform:translateY(0)
+}
+.navbar-toggler.open .line::after{
+    transform: translateY(0)
+} */
+
+/*ARROW ANIMATION */
+/* .navbar-toggler.open .line::before{
+    transform: rotate(-45deg) translate(3px,-6px);
+    width:20px
+}
+.navbar-toggler.open .line::after{
+    transform: rotate(45deg) translate(3px,6px);
+    width:20px
+} */
